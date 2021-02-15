@@ -1,0 +1,23 @@
+# change keyboard map
+kbdmap
+
+# set ip 
+vi /etc/rc.conf
+ifconfig_em0="inet 192.168.13.4 netmask 255.255.255.0"
+defaultrouter="192.168.13.1"
+
+# enable sshd
+Open /etc/rc.conf and insert this at the end sshd_enable="YES" 
+run /etc/rc.d/sshd start
+
+# change hostname
+vi /etc/rc.conf
+hostname="NEWNAME"
+
+# update os
+uname -mrs
+freebsd-update fetch install
+pkg update 
+pkg upgrade 
+
+
