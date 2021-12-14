@@ -1,0 +1,6 @@
+dmesg|grep memory
+vmstat free
+sysctl hw.physmem
+sysctl -n hw.physmem | awk '{ byte =$1 /1024/1024/1024; print byte " GB" }'
+sysctl -h hw.physmem hw.realmem hw.availmem
+
